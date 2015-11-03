@@ -43,6 +43,7 @@ def deploy():
 
         os.system('rm -rf public')
         os.system('git clone %s %s' % (GIHUB_IO_GIT, 'public'))
+        os.system('rm -rf public/*')
         os.system('hugo -v -b "http://ifels.github.io" -t redlounge')
 
     with switchDir(publicDir):
